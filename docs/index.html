@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MegaCampus">
+  <meta name="keywords" content="dataset, Multi-appearance, In-the-wild, Large scale, Campus">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MEGACAMPUS</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/index2.css">
+  <link rel="icon" href="./static/images/bluejay.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+  <script src="./static/js/script.js"></script>
+
+  <link rel="stylesheet" href="./static/css/dics.original.css">
+  <!-- <script src="./static/js/event_handler.js"></script> -->
+  <script src="./static/js/dics.original.js"></script>
+
+
+
+  <style>
+    .hero.teaser {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .container.is-max-desktop {
+      max-width: 1600px;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+  
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .col-md-8 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  
+    .video-compare-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.26%; /* 16:9 aspect ratio */
+    }
+  
+    .video,
+    .videoMerge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .interpolation-image {
+      width: 100%;
+      max-width: 1600px;
+      height: auto;
+    }
+  </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', domReady);
+
+      function domReady() {
+          new Dics({
+              container: document.querySelectorAll('.b-dics')[0],
+              hideTexts: false,
+              textPosition: "bottom"
+
+          });
+          new Dics({
+              container: document.querySelectorAll('.b-dics')[1],
+              hideTexts: false,
+              textPosition: "bottom"
+
+          });
+          new Dics({
+              container: document.querySelectorAll('.b-dics')[2],
+              hideTexts: false,
+              textPosition: "bottom"
+
+          });
+          new Dics({
+              container: document.querySelectorAll('.b-dics')[3],
+              hideTexts: false,
+              textPosition: "bottom"
+
+          });
+      }
+</script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">MegaCampus: A Year-long Visual Dataset Capturing Seasonal and Elevational Variations</h1>
+          <!-- PDF Link. -->
+          <!-- <h2 class="title is-3 publication-title"> ECCV 2024 </h2> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Xijun Liu</a>,</span>
+            <span class="author-block">
+              <a href="">Yifan Zhou</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/cheng-peng/home">Cheng Peng</a></span>,
+            </span>
+            <span class="author-block">
+              <a href="https://engineering.jhu.edu/faculty/rama-chellappa/">Rama Chellappa</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Johns Hopkins University </span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Intro figure. -->
+ <div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="introfig">
+      <img src="images/JHU.gif"
+             class="introfig"
+             alt="introfig"/>
+    </div>
+  </div>
+</div>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="content has-text-justified">
+      <p style="text-align: center;">
+       MegaCampus, a multi-appearance, multi-view, multi-elevation in-the-wild real-world dataset. 
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce MegaCampus, a multi-appearance, multi-view, multi-elevation in-the-wild real-world dataset. 
+            It depicts a comprehensive and expansive outlook of the Johns Hopkins University Homewood Campus. 
+            The images were captured and selected meticulously around the buildings within the campus, and were taken in including different seasons,
+            at distinct time within a day, under wide-ranging weather conditions, at varying altitude, with manifold camera devices over a year-long time span. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Pipeline. -->
+  </div>
+</section>
+
+
+<section>
+  <div class="container is-max-desktop">
+    <!-- Section Title -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Data Collection</h2>
+        <div class="content has-text-justified">
+          <p>
+            The dataset consists of 10 individual buildings, covering lighting conditions including sunny, cloudy, and low-light at varying altitudes across four seasons. 
+            With each setting, a video was taken by circumnavigating around the building, ensuring full coverage of its exterior. 
+            After sampling the frames of the video and censoring the PII information, we obtained clusters of images. Then, we registered all images of individual buildings. 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inserted Table -->
+  
+
+    <!-- Data Collection Image -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="data_collection">
+          <img src="images/data_collection.png"
+               class="data collection image"
+               alt="Data collection image"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Alignment</h2>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Airborne images captured by a drone offer a wide perspective and less coverage by plants and transient objects. 
+            All images taken during the summer at an altitude of 60 meters above ground level were registered into a unified coordinate system, which serves as the anchor for subsequent data alignment and analysis. 
+            Then, we perform Procrustes alignment to align all images into the unified coordinate system. Here we show a video of the sparse reconstruction of the JHU Campus.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <video controls autoplay loop muted width="100%">
+          <source src="images/JHU.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container is-max-desktop">
+    <!-- Data Collection Image -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Sample Data</h2>
+        <div class="sample_datan">
+          <img src="images/sample_data.png"
+               class="data collection image"
+               alt="Data collection image"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The source code of this website is borrowed from 
+            <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/limacv/deblurnerf">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
