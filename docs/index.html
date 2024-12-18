@@ -124,7 +124,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">MegaCampus: An Immersive Multi-Elevation 3D Reconstruction Dataset of Johns Hopkins Campus Spanning Across a Year</h1>
+          <h1 class="title is-1 publication-title">An Immersive Multi-Elevation Multi-Seasonal Dataset for 3D Reconstruction and Visualization</h1>
           <!-- PDF Link. -->
           <!-- <h2 class="title is-3 publication-title"> ECCV 2024 </h2> -->
           <div class="is-size-5 publication-authors">
@@ -132,7 +132,9 @@
               <a href="">Xijun Liu</a>,</span>
             <span class="author-block">
               <a href="">Yifan Zhou</a>,
-            </span>
+            <span>
+              <a href="">Yuxiang Guo</a>,
+            <span>
             <span class="author-block">
               <a href="https://engineering.jhu.edu/faculty/rama-chellappa/">Rama Chellappa</a>,
             </span>
@@ -181,10 +183,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce MegaCampus, a multi-appearance, multi-view, multi-elevation in-the-wild real-world dataset. 
-            It depicts a comprehensive and expansive outlook of the Johns Hopkins University Homewood Campus. 
-            The images were captured and selected meticulously around the buildings within the campus, and were taken in including different seasons,
-            at distinct time within a day, under wide-ranging weather conditions, at varying altitude, with manifold camera devices over a year-long time span. 
+            Significant progress has been made in photo-realistic scene reconstruction over recent years. Various disparate efforts have enabled capabilities such as multi-appearance or large-scale modeling; however, there lacks a welldesigned dataset that can evaluate the holistic progress of scene reconstruction. We introduce a collection of imagery of the Johns Hopkins Homewood Campus, acquired at different seasons, times of day, in multiple elevations, and across a large scale. We perform a multi-stage calibration process, which efficiently recover camera parameters from phone and drone cameras. This dataset can enable researchers to rigorously explore challenges in unconstrained settings, including effects of inconsistent illumination, reconstruction from large scale and from significantly different perspectives, etc.
           </p>
         </div>
       </div>
@@ -204,9 +203,31 @@
         <h2 class="title is-3">Data Collection</h2>
         <div class="content has-text-justified">
           <p>
-            The dataset consists of 10 individual buildings, covering lighting conditions including sunny, cloudy, and low-light at varying altitudes across four seasons. 
-            With each setting, a video was taken by circumnavigating around the building, ensuring full coverage of its exterior. 
-            After sampling the frames of the video and censoring the PII information, we obtained clusters of images. Then, we registered all images of individual buildings. 
+            We introduce a university-scale, real-world dataset. This dataset is a comprehensive and expansive outlook of the Johns Hopkins University Homewood Campus, covering area over 80000 m&sup2. As shown in Fig. 1, the images are captured and selected meticulously around buildings within the campus, and were photographed across different seasons,
+            distinct times of a day, and different altitudes, over a
+            year. Our dataset overcomes previous shortcomings through
+            the following characteristics: (1) Large-scale and potentially
+            repetitive structures: the architecture of the JHU campus
+            buildings has a uniform style. This can introduce visual
+            ambiguities that challenge image registration, where
+            images with similar textures may be matched together. By
+            offering large-scale scenes with intricate architectural patterns,
+            our dataset stresses the robustness of reconstruction
+            algorithms. (2) Multi-appearance and Multi-view: Photographs
+            taken during different seasons and times of day
+            create extensive variations in building appearance and illumination.
+            For each building, we provide images captured
+            around the structure at multiple time of the day and around
+            the year, ensuring uniform appearances during a single acquisition.
+            This approach yields multi-view datasets that allow
+            a fair evaluation of methods with access to only metadata,
+            such as the timestamp, and not the groundtruth image.
+            (3) Multi-elevation: To provide a comprehensive display
+            of each building’s structure, our dataset includes imagery
+            captured from the ground-level, aerial views at various altitudes.
+            By combining ground-level and multi-altitude acquisitions,
+            we enable algorithms to reconstruct buildings with
+            rich details at every angle.
           </p>
         </div>
       </div>
@@ -241,9 +262,18 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            Airborne images captured by a drone offer a wide perspective and less coverage by plants and transient objects. 
-            All images taken during the summer at an altitude of 60 meters above ground level were registered into a unified coordinate system, which serves as the anchor for subsequent data alignment and analysis. 
-            Then, we perform Procrustes alignment to align all images into the unified coordinate system. Here we show a video of the sparse reconstruction of the JHU Campus.
+            We employ a multi-stage image registration process.
+            First, we simultaneously register all images of each individual
+            building, incorporating additional constraints into the
+            registration algorithm avoid visual doppelgangers. Next, we
+            establish a stable anchor coordinate system using a subset
+            of images captured in summer from 60m above ground. By
+            aligning each building’s registered cameras to this anchor
+            coordinate system, we integrate all building reconstructions
+            into a unified spatial reference. As a result, we can achieve
+            a coherent, large-scale sparse reconstruction of the Johns
+            Hopkins University Homewood Campus with a reasonable
+            processing time.
           </p>
         </div>
       </div>
